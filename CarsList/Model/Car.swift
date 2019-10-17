@@ -14,18 +14,18 @@ struct Car {
     var model: String
     var productionYear: Int
     var bodyType: String
-    var photo: String
+    var urlPhoto: String
     var price: Int
     var ref: DatabaseReference?
     
-    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", photo: String = "", price: Int = 0) {
+    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", urlPhoto: String = "", price: Int = 0) {
         self.ref = nil
         self.id = id
         self.manufacturer = manufacturer
         self.model = model
         self.productionYear = productionYear
         self.bodyType = bodyType
-        self.photo = photo
+        self.urlPhoto = urlPhoto
         self.price = price
     }
         
@@ -37,7 +37,7 @@ struct Car {
         let productionYear = value["productionYear"] as? Int,
         let bodyType = value["bodyType"] as? String,
         let price = value["price"] as? Int,
-        let photo = value["photo"] as? String
+        let urlPhoto = value["urlPhoto"] as? String
         else { return nil }
         
         self.ref = snapshot.ref
@@ -46,13 +46,13 @@ struct Car {
         self.model = model
         self.productionYear = productionYear
         self.bodyType = bodyType
-        self.photo = photo
+        self.urlPhoto = urlPhoto
         self.price = price
     }
         
     func toAnyObject() -> Any {
         return [
-            "id": id, "photo": photo, "manufacturer": manufacturer, "model": model, "productionYear": productionYear, "bodyType": bodyType, "price": price
+            "id": id, "urlPhoto": urlPhoto, "manufacturer": manufacturer, "model": model, "productionYear": productionYear, "bodyType": bodyType, "price": price
         ]
     }
     
@@ -78,21 +78,11 @@ struct Car {
 extension Car {
     static var all: [Car] {
         return [
-            Car(
-                id: "1",
-                manufacturer: "Toyota", model: "Camry", productionYear: 2019, bodyType: "Sedan",
-                photo: "" , price: 1593000),
-            Car(
-                id: "2",
-                manufacturer: "BMW", model: "X6", productionYear: 2018, bodyType: "Crossover",
-                photo: "", price: 5420000),
-            Car(
-                id: "3",
-                manufacturer: "Audi", model: "Q8", productionYear: 2019, bodyType: "Crossover",
-                photo: "", price: 5040000)
+            Car(id: "mgCIF6RNXBkfVuXt", manufacturer: "Toyota", model: "Camry", productionYear: 2010, bodyType: "Sedan", urlPhoto: "https://firebasestorage.googleapis.com/v0/b/carslist-663ea.appspot.com/o/images%2FmgCIF6RNXBkfVuXt.jpg?alt=media&token=5221a029-0bdf-4802-989f-94893feb7039" , price: 1000000),
+            Car(id: "T71uz830PwiumSPT", manufacturer: "BMW", model: "X6", productionYear: 2008, bodyType: "Crossover", urlPhoto: "https://firebasestorage.googleapis.com/v0/b/carslist-663ea.appspot.com/o/images%2FT71uz830PwiumSPT.jpg?alt=media&token=840683d2-04b2-4d63-bb22-dcd1bcbc1462", price: 5000000)
         ]
     }
-//    static func loadDefaults() -> [Car] {
-//           return all
-//       }
+    static func loadDefaults() -> [Car] {
+           return all
+       }
 }

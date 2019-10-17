@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+
+var selectedImage: UIImage?
 
 class AddEditTableViewController: UITableViewController {
     
@@ -18,9 +21,9 @@ class AddEditTableViewController: UITableViewController {
     @IBOutlet var productionYearTextField: UITextField!
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var uploadPhoto: UIButton!
+    @IBOutlet var saveButton: UIBarButtonItem!
     
     var user: User!
-    var ref = Database.database().reference(withPath: "cars")
     var cars = Car()
     var bodyTypesArray: Array<String> = []
     var productionYearArray: Array<Int> = []
@@ -32,45 +35,57 @@ class AddEditTableViewController: UITableViewController {
         uploadUI()
         createBodyTypePicker()
         createProductionYearPicker()
-        createUser()
+        textFieldsChanged()
+        
+        saveButton.isEnabled = false
+        manufacturerTextField.delegate = self
+        modelTextField.delegate = self
+        bodyTypeTextField.delegate = self
+        productionYearTextField.delegate = self
+        priceTextField.delegate = self
     }
-
+    
     func uploadUI() {
-//        photo.image = cars.photo
         manufacturerTextField.text = cars.manufacturer
         modelTextField.text = cars.model
         bodyTypeTextField.text = cars.bodyType
         productionYearTextField.text = "\(cars.productionYear)"
         priceTextField.text = "\(cars.price)"
+        photo.loadImagesUsingCache(urlString: cars.urlPhoto)
     }
         
     func updateCar() {
         cars.manufacturer = manufacturerTextField.text ?? ""
         cars.model = modelTextField.text ?? ""
         cars.bodyType = bodyTypeTextField.text ?? ""
-        cars.productionYear = Int(productionYearTextField.text!)!
-        cars.price = Int(priceTextField.text!)!
-        cars.id = cars.createUniqueId()
-//
-//        let car = Car(id: "new1", manufacturer: manufacturerTextField.text!, model: modelTextField.text!, productionYear: Int(productionYearTextField.text!)!, bodyType: bodyTypeTextField.text!, photo: "", price: Int(priceTextField.text!)!)
-//        ref.setValue(car.toAnyObject())
-        
-//        ref = Database.database().reference(withPath: "cars")
-//        let carRef = self.ref.child(cars.id)
-//        carRef.setValue("manufacturer": cars.manufacturer, "model": cars.model)
+        cars.productionYear = Int(productionYearTextField.text ?? "0") ?? 0
+        cars.price = Int(priceTextField.text ?? "0") ?? 0
     }
     
-    func createUser() {
+    func textFieldsChanged() {
+        manufacturerTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        modelTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        priceTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+
+}
+
+extension AddEditTableViewController: UITextFieldDelegate {
+    @objc func textFieldDidChange() {
+        if !manufacturerTextField.text!.isEmpty && !modelTextField.text!.isEmpty && !bodyTypeTextField.text!.isEmpty && !productionYearTextField.text!.isEmpty && !priceTextField.text!.isEmpty && productionYearTextField.text != "0" && priceTextField.text != "0" {
+            saveButton.isEnabled = true
+            print(selectedImage)
+        }
+        
+    }
+}
+
+//    func createUser() {
 //        guard let currentUser = Auth.auth().currentUser else { return }
 //        user.uid = currentUser.uid
 //        user.email = currentUser.email ?? ""
 //        ref = Database.database().reference(withPath: "users").child(user.uid).child("car")
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        saveCar()
-//    }
-}
+ //   }
     
     
 

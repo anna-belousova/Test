@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 extension AddEditTableViewController {
         
@@ -15,6 +16,7 @@ extension AddEditTableViewController {
         let alert = UIAlertController(title: "Please choose image source", message: nil, preferredStyle: .actionSheet)
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
@@ -44,7 +46,7 @@ extension AddEditTableViewController {
 
 extension AddEditTableViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        selectedImage = info[.originalImage] as? UIImage
         photo.image = selectedImage
         dismiss(animated: true)
     }

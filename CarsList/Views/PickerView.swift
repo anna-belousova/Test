@@ -27,6 +27,7 @@ extension AddEditTableViewController: UIPickerViewDataSource, UIPickerViewDelega
     }
     
     func createProductionYearPicker() {
+        
         let productionYearPicker = UIPickerView()
         productionYearPicker.tag = 2
         productionYearPicker.dataSource = self
@@ -75,8 +76,10 @@ extension AddEditTableViewController: UIPickerViewDataSource, UIPickerViewDelega
         switch pickerView.tag {
         case 1:
             bodyTypeTextField.text = bodyTypesArray[row]
+            textFieldDidChange()
         case 2:
             productionYearTextField.text = String(productionYearArray[row])
+            textFieldDidChange()
         default:
             break
         }
