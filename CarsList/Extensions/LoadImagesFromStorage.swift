@@ -15,6 +15,7 @@ extension UIImageView {
     func loadImagesUsingCache(urlString: String) {
         if let cachedImage = imageCache.object(forKey: urlString as NSString) {
             self.image = cachedImage
+            print("image from cache")
             return
         }
         

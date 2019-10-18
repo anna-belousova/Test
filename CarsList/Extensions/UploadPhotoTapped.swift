@@ -49,6 +49,7 @@ extension AddEditTableViewController: UIImagePickerControllerDelegate {
         selectedImage = info[.originalImage] as? UIImage
         photo.image = selectedImage
         dismiss(animated: true)
+        textFieldDidChange()
     }
 }
 

@@ -22,7 +22,7 @@
 		D0BE998A234FE4F200F27406 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */; };
 		D0C929AF234D3EFD00982FA3 /* UploadPhotoTapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */; };
 		D0C929B1234D4DD600982FA3 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */; };
-		D0E7039F2348E47000B932DA /* Navigation Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7039E2348E47000B932DA /* Navigation Segues.swift */; };
+		D0E7039F2348E47000B932DA /* SaveChangesSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */; };
 		D0E703C323491C3600B932DA /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E703C223491C3600B932DA /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoTapped.swift; sourceTree = "<group>"; };
 		D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
-		D0E7039E2348E47000B932DA /* Navigation Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation Segues.swift"; sourceTree = "<group>"; };
+		D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesSegue.swift; sourceTree = "<group>"; };
 		D0E703C223491C3600B932DA /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */,
-				D0E7039E2348E47000B932DA /* Navigation Segues.swift */,
+				D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */,
 				D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */,
 				D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */,
 			);
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E7039F2348E47000B932DA /* Navigation Segues.swift in Sources */,
+				D0E7039F2348E47000B932DA /* SaveChangesSegue.swift in Sources */,
 				D0901D2823451A270010174F /* AddEditTableViewController.swift in Sources */,
 				D05281912350A7F700A4D0D1 /* AuthenticationViewController.swift in Sources */,
 				D0C929B1234D4DD600982FA3 /* LocalDataManager.swift in Sources */,

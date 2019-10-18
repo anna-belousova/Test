@@ -17,31 +17,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CarCell" rowHeight="127" id="tMq-Fs-9yv" customClass="CarCell" customModule="CarsList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="127"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CarCell" rowHeight="120" id="tMq-Fs-9yv" customClass="CarCell" customModule="CarsList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tMq-Fs-9yv" id="wtA-1L-NB0">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="127"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rX6-Vi-rVl">
-                                            <rect key="frame" x="10" y="10" width="164" height="108"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rX6-Vi-rVl">
+                                            <rect key="frame" x="10" y="6" width="164" height="108"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="164" id="nUX-lq-1v0"/>
                                                 <constraint firstAttribute="height" constant="108" id="qTU-MV-rcs"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="t9b-SV-GFY">
-                                            <rect key="frame" x="184" y="19" width="186" height="89"/>
+                                            <rect key="frame" x="184" y="14" width="186" height="92"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H58-Rc-8Rf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="63"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-hq-pSa">
-                                                    <rect key="frame" x="0.0" y="66" width="186" height="23"/>
+                                                    <rect key="frame" x="0.0" y="69" width="186" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="Odk-hW-ghR"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155.5" id="P59-98-0oJ"/>
@@ -54,14 +54,13 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="t9b-SV-GFY" firstAttribute="top" secondItem="wtA-1L-NB0" secondAttribute="topMargin" constant="8" id="C81-jX-o9M"/>
-                                        <constraint firstItem="rX6-Vi-rVl" firstAttribute="top" secondItem="wtA-1L-NB0" secondAttribute="top" constant="10" id="Ccm-k1-YCN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="t9b-SV-GFY" secondAttribute="bottom" constant="3" id="5ZS-cB-1qQ"/>
+                                        <constraint firstItem="rX6-Vi-rVl" firstAttribute="top" secondItem="wtA-1L-NB0" secondAttribute="top" constant="6" id="Ccm-k1-YCN"/>
                                         <constraint firstItem="rX6-Vi-rVl" firstAttribute="leading" secondItem="wtA-1L-NB0" secondAttribute="leading" constant="10" id="Ekh-Wr-LE2"/>
                                         <constraint firstItem="t9b-SV-GFY" firstAttribute="leading" secondItem="rX6-Vi-rVl" secondAttribute="trailing" constant="10" id="GJr-Uy-AAw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="t9b-SV-GFY" secondAttribute="trailing" constant="5" id="LTI-a5-NSS"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="t9b-SV-GFY" secondAttribute="bottom" constant="8" id="dHH-OD-G5U"/>
-                                        <constraint firstItem="rX6-Vi-rVl" firstAttribute="top" secondItem="wtA-1L-NB0" secondAttribute="top" constant="10" id="h8r-YY-qGq"/>
-                                        <constraint firstAttribute="bottom" secondItem="rX6-Vi-rVl" secondAttribute="bottom" constant="9" id="pTI-ce-AAW"/>
+                                        <constraint firstItem="t9b-SV-GFY" firstAttribute="top" secondItem="wtA-1L-NB0" secondAttribute="topMargin" constant="3" id="MRP-sD-Clx"/>
+                                        <constraint firstAttribute="bottom" secondItem="rX6-Vi-rVl" secondAttribute="bottom" constant="6" id="pTI-ce-AAW"/>
                                         <constraint firstItem="rX6-Vi-rVl" firstAttribute="leading" secondItem="wtA-1L-NB0" secondAttribute="leading" constant="10" id="pie-UR-Y9r"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -258,6 +257,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="whm-0Q-11t">
                             <connections>
+                                <action selector="saveButtonTapped:" destination="fai-9N-TlM" id="TIa-xJ-qjI"/>
                                 <segue destination="wB8-Jd-z7g" kind="unwind" identifier="SaveSegue" unwindAction="unwindFor:towards:" id="rVi-zj-DyM"/>
                             </connections>
                         </barButtonItem>

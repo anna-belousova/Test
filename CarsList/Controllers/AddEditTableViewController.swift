@@ -43,6 +43,9 @@ class AddEditTableViewController: UITableViewController {
         bodyTypeTextField.delegate = self
         productionYearTextField.delegate = self
         priceTextField.delegate = self
+        
+        photo.layer.cornerRadius = 10
+        photo.layer.borderWidth = 2.0
     }
     
     func uploadUI() {
@@ -74,7 +77,6 @@ extension AddEditTableViewController: UITextFieldDelegate {
     @objc func textFieldDidChange() {
         if !manufacturerTextField.text!.isEmpty && !modelTextField.text!.isEmpty && !bodyTypeTextField.text!.isEmpty && !productionYearTextField.text!.isEmpty && !priceTextField.text!.isEmpty && productionYearTextField.text != "0" && priceTextField.text != "0" {
             saveButton.isEnabled = true
-            print(selectedImage)
         }
         
     }

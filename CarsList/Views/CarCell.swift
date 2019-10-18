@@ -13,5 +13,8 @@ class CarCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var photoImageView: UIImageView!
+    
+//    photoImageView.layer.cornerRadius = 10
+//    photoImageView.layer.borderWidth = 2.0
 }
 
