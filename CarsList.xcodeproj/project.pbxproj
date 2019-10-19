@@ -15,15 +15,16 @@
 		D05281912350A7F700A4D0D1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05281902350A7F700A4D0D1 /* AuthenticationViewController.swift */; };
 		D08BAB732358843D00D4260F /* LoadImagesFromStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */; };
 		D08BAB772359536C00D4260F /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BAB762359536C00D4260F /* Number+Extension.swift */; };
-		D08BAB7B235B435D00D4260F /* Traffic_Jam_Background-512@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */; };
 		D0901D2423451A270010174F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0901D2323451A270010174F /* AppDelegate.swift */; };
 		D0901D2823451A270010174F /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0901D2723451A270010174F /* AddEditTableViewController.swift */; };
-		D0901D2B23451A270010174F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2923451A270010174F /* Main.storyboard */; };
+		D0901D2B23451A270010174F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2923451A270010174F /* Main.storyboard */; settings = {ASSET_TAGS = (1, ); }; };
 		D0901D2D23451A290010174F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2C23451A290010174F /* Assets.xcassets */; };
 		D0901D3023451A290010174F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2E23451A290010174F /* LaunchScreen.storyboard */; };
 		D0BE998A234FE4F200F27406 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */; };
 		D0C929AF234D3EFD00982FA3 /* UploadPhotoTapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */; };
 		D0C929B1234D4DD600982FA3 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */; };
+		D0D35E03235B7C0200CE2CB9 /* backgroundCars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0D35E02235B7C0200CE2CB9 /* backgroundCars.jpg */; };
+		D0D35E05235B8AAF00CE2CB9 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D35E04235B8AAF00CE2CB9 /* HideKeyboard.swift */; };
 		D0E7039F2348E47000B932DA /* SaveChangesSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */; };
 		D0E703C323491C3600B932DA /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E703C223491C3600B932DA /* PickerView.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,6 @@
 		D05281902350A7F700A4D0D1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesFromStorage.swift; sourceTree = "<group>"; };
 		D08BAB762359536C00D4260F /* Number+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extension.swift"; sourceTree = "<group>"; };
-		D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Traffic_Jam_Background-512@3x.png"; sourceTree = "<group>"; };
 		D0901D2023451A270010174F /* CarsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0901D2323451A270010174F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0901D2723451A270010174F /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoTapped.swift; sourceTree = "<group>"; };
 		D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		D0D35E02235B7C0200CE2CB9 /* backgroundCars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundCars.jpg; sourceTree = "<group>"; };
+		D0D35E04235B8AAF00CE2CB9 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesSegue.swift; sourceTree = "<group>"; };
 		D0E703C223491C3600B932DA /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +131,7 @@
 				D0E703A12348E5C700B932DA /* Extensions */,
 				D0901D2323451A270010174F /* AppDelegate.swift */,
 				D0901D2C23451A290010174F /* Assets.xcassets */,
-				D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */,
+				D0D35E02235B7C0200CE2CB9 /* backgroundCars.jpg */,
 				D0901D3123451A290010174F /* Info.plist */,
 				D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */,
 			);
@@ -155,6 +157,7 @@
 				D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */,
 				D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */,
 				D08BAB762359536C00D4260F /* Number+Extension.swift */,
+				D0D35E04235B8AAF00CE2CB9 /* HideKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +190,9 @@
 		D0901D1823451A270010174F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "MacBook Air";
@@ -219,11 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D35E03235B7C0200CE2CB9 /* backgroundCars.jpg in Resources */,
 				D0901D3023451A290010174F /* LaunchScreen.storyboard in Resources */,
 				D0BE998A234FE4F200F27406 /* GoogleService-Info.plist in Resources */,
 				D0901D2D23451A290010174F /* Assets.xcassets in Resources */,
 				D0901D2B23451A270010174F /* Main.storyboard in Resources */,
-				D08BAB7B235B435D00D4260F /* Traffic_Jam_Background-512@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +292,7 @@
 				D0901D2423451A270010174F /* AppDelegate.swift in Sources */,
 				D0E703C323491C3600B932DA /* PickerView.swift in Sources */,
 				D014E4C723452E3B004DFCC2 /* CarCell.swift in Sources */,
+				D0D35E05235B8AAF00CE2CB9 /* HideKeyboard.swift in Sources */,
 				D08BAB732358843D00D4260F /* LoadImagesFromStorage.swift in Sources */,
 				D014E4C3234529FF004DFCC2 /* ListTableViewController.swift in Sources */,
 				D03AC7EC23537A2D00F2492F /* User.swift in Sources */,

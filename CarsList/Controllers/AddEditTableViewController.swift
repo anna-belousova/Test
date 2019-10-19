@@ -32,10 +32,10 @@ class AddEditTableViewController: UITableViewController {
         super.viewDidLoad()
         productionYearArray = cars.createProductionYearArray()
         bodyTypesArray = cars.createBodyTypeArray()
+        createBodyTypeAndProductionYearPicker()
         uploadUI()
-        createBodyTypePicker()
-        createProductionYearPicker()
         textFieldsChanged()
+        hideKeyboard()
         
         saveButton.isEnabled = false
         manufacturerTextField.delegate = self
@@ -45,9 +45,20 @@ class AddEditTableViewController: UITableViewController {
         priceTextField.delegate = self
         
         photo.layer.cornerRadius = 15
-       // photo.layer.borderWidth = 3.0
-        //photo.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 && view.bounds.size.height > view.bounds.size.width {
+            let aspectRatio: CGFloat = 266/896
+            return aspectRatio * view.bounds.size.height
+        }
+        if indexPath.section == 0 && view.bounds.size.height < view.bounds.size.width {
+            let aspectRatio: CGFloat = 250/414
+            return aspectRatio * view.bounds.size.height
+        }
+        return UITableView.automaticDimension
+    }
+    
     
     func uploadUI() {
         manufacturerTextField.text = cars.manufacturer
@@ -70,6 +81,11 @@ class AddEditTableViewController: UITableViewController {
         manufacturerTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         modelTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         priceTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+    
+    func hideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        self.view.addGestureRecognizer(tap)
     }
 
 }

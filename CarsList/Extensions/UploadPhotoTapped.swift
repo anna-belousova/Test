@@ -21,6 +21,7 @@ extension AddEditTableViewController {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
                 imagePicker.sourceType = .camera
+                imagePicker.modalPresentationStyle = .fullScreen
                 self.present(imagePicker, animated: true)
             }
             alert.addAction(cameraAction)
@@ -29,6 +30,7 @@ extension AddEditTableViewController {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
                 imagePicker.sourceType = .photoLibrary
+                imagePicker.modalPresentationStyle = .fullScreen
                 self.present(imagePicker, animated: true)
             }
             alert.addAction(photoLibraryAction)

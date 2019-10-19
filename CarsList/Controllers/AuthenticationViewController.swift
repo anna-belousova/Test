@@ -16,6 +16,8 @@ class AuthenticationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboard()
+        
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if user != nil {
                 self?.performSegue(withIdentifier: "SignInSegue", sender: nil)
@@ -27,6 +29,15 @@ class AuthenticationViewController: UIViewController {
         super.viewWillAppear(true)
         emailTextField.text = ""
         passwordTextField.text = ""
+    }
+    
+    func hideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func endEditing() {
+        view.endEditing(true)
     }
 
     func callAlert(withText text: String) {
@@ -73,15 +84,7 @@ class AuthenticationViewController: UIViewController {
         }
     }
     
-//    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-//        guard unwindSegue.identifier == "SignOutSegue" else { return }
-//        do {
-//                   try Auth.auth().signOut()
-//               }
-//               catch {
-//                   print(error.localizedDescription)
-//               }
-//               dismiss(animated: true, completion: nil)
-//    }
     
+
 }
+

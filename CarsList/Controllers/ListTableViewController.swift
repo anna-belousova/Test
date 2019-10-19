@@ -55,13 +55,22 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let car = cars[indexPath.row]
-            let deleteRef = storageRef.child(car.id)
-            deleteRef.delete { error in
+            storageRef.child(car.id).delete { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }
             }
             car.ref?.removeValue()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if view.bounds.size.height > view.bounds.size.width {
+            let aspectRatio: CGFloat = 120/896
+            return aspectRatio * view.bounds.size.height
+        } else {
+            let aspectRatio: CGFloat = 100/414
+            return aspectRatio * view.bounds.size.height
         }
     }
     
@@ -83,66 +92,6 @@ class ListTableViewController: UITableViewController {
         present(alert, animated: true)
         selectedImage = nil
           }
-              
-        @IBAction func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UITableViewController) {
-            
-            guard unwindSegue.identifier == "SaveSegue" else { return }
-            let source = unwindSegue.source as! AddEditTableViewController
-            source.updateCar()
-            var car = source.cars
-            guard car.manufacturer != "" && car.model != "" && car.bodyType != "" && car.productionYear > 0 && car.price > 0 && (selectedImage != nil || car.urlPhoto != "") else {
-                callAlert(withText: "Please fill in all fields and select a photo")
-                return
-            }
-            if let selectedPath = tableView.indexPathForSelectedRow {
-    //edited cell
-                cars[selectedPath.row] = car
-                if selectedImage != nil {
-                    let newStorageRef = storageRef.child(car.id)
-                    guard let imageData = selectedImage?.jpegData(compressionQuality: 0.5) else { return }
-                    newStorageRef.putData(imageData, metadata: nil) { metadata, error in
-                        guard metadata != nil else {
-                            print(error?.localizedDescription as Any)
-                            return
-                        }
-                        newStorageRef.downloadURL { url, error in
-                            guard let downloadUrl = url else {
-                                print(error?.localizedDescription as Any)
-                                return
-                            }
-                            let urlPhoto = downloadUrl.absoluteString
-                            car.ref?.updateChildValues(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
-                            selectedImage = nil
-                        }
-                    }
-                } else {
-                    car.ref?.updateChildValues(["id": car.id, "urlPhoto": car.urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
-                }
-            } else {
-    //added cell
-                car.id = car.createUniqueId()
-                let newRef = self.ref.child(car.id)
-                let newStorageRef = storageRef.child(car.id)
-                print(newStorageRef)
-                guard let imageData = selectedImage?.jpegData(compressionQuality: 0.5) else { return }
-                newStorageRef.putData(imageData, metadata: nil) { metadata, error in
-                    guard metadata != nil else {
-                        print(error?.localizedDescription as Any)
-                        return
-                    }
-                    newStorageRef.downloadURL { url, error in
-                        guard let downloadUrl = url else {
-                            print(error?.localizedDescription as Any)
-                            return
-                        }
-                        let urlPhoto = downloadUrl.absoluteString
-                        print(urlPhoto)
-                        newRef.setValue(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
-                        selectedImage = nil
-                    }
-                }
-            }
-        }
     
     
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
@@ -152,7 +101,9 @@ class ListTableViewController: UITableViewController {
         catch {
             print(error.localizedDescription)
         }
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        //navigationController?.popViewController(animated: true)
         print("sign out")
     }
 }
+

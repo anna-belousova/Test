@@ -10,7 +10,7 @@ import UIKit
 
 extension AddEditTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
-    func createBodyTypePicker() {
+    func createBodyTypeAndProductionYearPicker() {
         
         let bodyTypePicker = UIPickerView()
         bodyTypePicker.tag = 1
@@ -18,28 +18,19 @@ extension AddEditTableViewController: UIPickerViewDataSource, UIPickerViewDelega
         bodyTypePicker.delegate = self
         bodyTypeTextField.inputView = bodyTypePicker
         
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(endEditing))
-        toolbar.setItems([doneButton], animated: true)
-        toolbar.isUserInteractionEnabled = true
-        bodyTypeTextField.inputAccessoryView = toolbar
-    }
-    
-    func createProductionYearPicker() {
-        
         let productionYearPicker = UIPickerView()
         productionYearPicker.tag = 2
         productionYearPicker.dataSource = self
         productionYearPicker.delegate = self
         productionYearTextField.inputView = productionYearPicker
         
-        let toolbar2 = UIToolbar()
-        toolbar2.sizeToFit()
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(endEditing))
-        toolbar2.setItems([doneButton], animated: true)
-        toolbar2.isUserInteractionEnabled = true
-        productionYearTextField.inputAccessoryView = toolbar2
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        bodyTypeTextField.inputAccessoryView = toolbar
+        productionYearTextField.inputAccessoryView = toolbar
     }
     
     @objc func endEditing() {
