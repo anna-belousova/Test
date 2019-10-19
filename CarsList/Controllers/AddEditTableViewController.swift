@@ -44,8 +44,9 @@ class AddEditTableViewController: UITableViewController {
         productionYearTextField.delegate = self
         priceTextField.delegate = self
         
-        photo.layer.cornerRadius = 10
-        photo.layer.borderWidth = 2.0
+        photo.layer.cornerRadius = 15
+       // photo.layer.borderWidth = 3.0
+        //photo.layer.borderColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
     }
     
     func uploadUI() {

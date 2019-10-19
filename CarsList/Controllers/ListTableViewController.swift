@@ -45,8 +45,9 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as! CarCell
         let car = cars[indexPath.row]
         cell.descriptionLabel.text = "\(car.manufacturer) \(car.model), \(car.productionYear)"
-        cell.priceLabel.text = "\(car.price) руб."
+        cell.priceLabel.text = "\(car.price) $"
         cell.photoImageView.loadImagesUsingCache(urlString: car.urlPhoto)
+        cell.configure(cell: carCell)
         return cell
     }
  
@@ -89,8 +90,7 @@ class ListTableViewController: UITableViewController {
             let source = unwindSegue.source as! AddEditTableViewController
             source.updateCar()
             var car = source.cars
-            
-            guard !car.manufacturer.isEmpty && !car.model.isEmpty && !car.bodyType.isEmpty && car.productionYear > 0 && car.price > 0 && (selectedImage != nil || !car.urlPhoto.isEmpty) else {
+            guard car.manufacturer != "" && car.model != "" && car.bodyType != "" && car.productionYear > 0 && car.price > 0 && (selectedImage != nil || car.urlPhoto != "") else {
                 callAlert(withText: "Please fill in all fields and select a photo")
                 return
             }

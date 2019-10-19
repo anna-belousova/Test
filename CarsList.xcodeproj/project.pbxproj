@@ -14,6 +14,8 @@
 		D03AC7EC23537A2D00F2492F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03AC7EB23537A2D00F2492F /* User.swift */; };
 		D05281912350A7F700A4D0D1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05281902350A7F700A4D0D1 /* AuthenticationViewController.swift */; };
 		D08BAB732358843D00D4260F /* LoadImagesFromStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */; };
+		D08BAB772359536C00D4260F /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BAB762359536C00D4260F /* Number+Extension.swift */; };
+		D08BAB7B235B435D00D4260F /* Traffic_Jam_Background-512@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */; };
 		D0901D2423451A270010174F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0901D2323451A270010174F /* AppDelegate.swift */; };
 		D0901D2823451A270010174F /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0901D2723451A270010174F /* AddEditTableViewController.swift */; };
 		D0901D2B23451A270010174F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2923451A270010174F /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		D03AC7EB23537A2D00F2492F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D05281902350A7F700A4D0D1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesFromStorage.swift; sourceTree = "<group>"; };
+		D08BAB762359536C00D4260F /* Number+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extension.swift"; sourceTree = "<group>"; };
+		D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Traffic_Jam_Background-512@3x.png"; sourceTree = "<group>"; };
 		D0901D2023451A270010174F /* CarsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0901D2323451A270010174F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0901D2723451A270010174F /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				D0E703A12348E5C700B932DA /* Extensions */,
 				D0901D2323451A270010174F /* AppDelegate.swift */,
 				D0901D2C23451A290010174F /* Assets.xcassets */,
+				D08BAB7A235B435D00D4260F /* Traffic_Jam_Background-512@3x.png */,
 				D0901D3123451A290010174F /* Info.plist */,
 				D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */,
 			);
@@ -149,6 +154,7 @@
 				D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */,
 				D08BAB722358843D00D4260F /* LoadImagesFromStorage.swift */,
 				D0C929B0234D4DD600982FA3 /* LocalDataManager.swift */,
+				D08BAB762359536C00D4260F /* Number+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 				D0BE998A234FE4F200F27406 /* GoogleService-Info.plist in Resources */,
 				D0901D2D23451A290010174F /* Assets.xcassets in Resources */,
 				D0901D2B23451A270010174F /* Main.storyboard in Resources */,
+				D08BAB7B235B435D00D4260F /* Traffic_Jam_Background-512@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +279,7 @@
 				D0E7039F2348E47000B932DA /* SaveChangesSegue.swift in Sources */,
 				D0901D2823451A270010174F /* AddEditTableViewController.swift in Sources */,
 				D05281912350A7F700A4D0D1 /* AuthenticationViewController.swift in Sources */,
+				D08BAB772359536C00D4260F /* Number+Extension.swift in Sources */,
 				D0C929B1234D4DD600982FA3 /* LocalDataManager.swift in Sources */,
 				D014E4C123451F02004DFCC2 /* Car.swift in Sources */,
 				D0C929AF234D3EFD00982FA3 /* UploadPhotoTapped.swift in Sources */,
