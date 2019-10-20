@@ -18,6 +18,7 @@
 		D0901D2B23451A270010174F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2923451A270010174F /* Main.storyboard */; settings = {ASSET_TAGS = (1, ); }; };
 		D0901D2D23451A290010174F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2C23451A290010174F /* Assets.xcassets */; };
 		D0901D3023451A290010174F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0901D2E23451A290010174F /* LaunchScreen.storyboard */; };
+		D0B431DE235CFACD000ED41C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B431DD235CFACD000ED41C /* User.swift */; };
 		D0BE998A234FE4F200F27406 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */; };
 		D0C929AF234D3EFD00982FA3 /* UploadPhotoTapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */; };
 		D0D35E03235B7C0200CE2CB9 /* backgroundCars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0D35E02235B7C0200CE2CB9 /* backgroundCars.jpg */; };
@@ -40,6 +41,7 @@
 		D0901D2C23451A290010174F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0901D2F23451A290010174F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0901D3123451A290010174F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B431DD235CFACD000ED41C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D0BE9989234FE4F200F27406 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0C929AE234D3EFD00982FA3 /* UploadPhotoTapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoTapped.swift; sourceTree = "<group>"; };
 		D0D35E02235B7C0200CE2CB9 /* backgroundCars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundCars.jpg; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				D014E4C023451F02004DFCC2 /* Car.swift */,
+				D0B431DD235CFACD000ED41C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				D014E4C723452E3B004DFCC2 /* CarCell.swift in Sources */,
 				D08BAB732358843D00D4260F /* LoadImagesFromStorage.swift in Sources */,
 				D014E4C3234529FF004DFCC2 /* ListTableViewController.swift in Sources */,
+				D0B431DE235CFACD000ED41C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
