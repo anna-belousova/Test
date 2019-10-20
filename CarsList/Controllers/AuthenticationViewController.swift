@@ -13,7 +13,9 @@ class AuthenticationViewController: UIViewController {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-
+    @IBOutlet var signInButton: UIButton!
+    @IBOutlet var registerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
@@ -28,6 +30,17 @@ class AuthenticationViewController: UIViewController {
         super.viewWillAppear(true)
         emailTextField.text = ""
         passwordTextField.text = ""
+        
+        signInButton.layer.cornerRadius = 15
+        signInButton.layer.borderWidth = 2.0
+        signInButton.layer.borderColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        signInButton.setTitleColor(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1.0), for: .normal)
+        
+        registerButton.layer.cornerRadius = 15
+        registerButton.layer.borderWidth = 2.0
+        registerButton.layer.borderColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        registerButton.setTitleColor(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1.0), for: .normal)
+        
     }
     
     func hideKeyboard() {

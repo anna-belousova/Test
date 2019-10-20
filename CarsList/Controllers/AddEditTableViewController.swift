@@ -22,8 +22,11 @@ class AddEditTableViewController: UITableViewController {
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var uploadPhoto: UIButton!
     @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var sendEmailButton: UIButton!
     
     var cars = Car()
+    var user: User!
+    let userRef = Database.database().reference(withPath: "user")
     var bodyTypesArray: Array<String> = []
     var productionYearArray: Array<Int> = []
     
@@ -42,7 +45,19 @@ class AddEditTableViewController: UITableViewController {
         bodyTypeTextField.delegate = self
         productionYearTextField.delegate = self
         priceTextField.delegate = self
+        
         photo.layer.cornerRadius = 15
+        sendEmailButton.layer.cornerRadius = 15
+        sendEmailButton.layer.borderWidth = 2.0
+        sendEmailButton.layer.borderColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        sendEmailButton.setTitleColor(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1.0), for: .normal)
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            let currentUserRef = self.userRef.child(self.user.uid)
+            currentUserRef.setValue(self.user.email)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -73,6 +88,7 @@ class AddEditTableViewController: UITableViewController {
         cars.productionYear = Int(productionYearTextField.text ?? "0") ?? 0
         cars.price = Int(priceTextField.text ?? "0") ?? 0
         cars.dateOfAdding = getDate(for: Date())
+        cars.addedByUser = user.email
     }
     
     func getDate(for date: Date) -> String {

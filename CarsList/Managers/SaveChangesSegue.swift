@@ -43,12 +43,16 @@ extension ListTableViewController {
                                 return
                             }
                             let urlPhoto = downloadUrl.absoluteString
-                            car.ref?.updateChildValues(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
+                            car.ref?.updateChildValues(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding
+                              //  , "addedByUser": car.addedByUser
+                            ])
                             selectedImage = nil
                         }
                     }
                 } else {
-                    car.ref?.updateChildValues(["id": car.id, "urlPhoto": car.urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
+                    car.ref?.updateChildValues(["id": car.id, "urlPhoto": car.urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding
+                     //   , "addedByUser": car.addedByUser
+                    ])
                 }
             } else {
 //added cell
@@ -67,7 +71,7 @@ extension ListTableViewController {
                             return
                         }
                         let urlPhoto = downloadUrl.absoluteString
-                        newRef.setValue(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
+                        newRef.setValue(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding, "addedByUser": car.addedByUser])
                         selectedImage = nil
                     }
                 }

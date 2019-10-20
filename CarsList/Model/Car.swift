@@ -17,9 +17,10 @@ struct Car {
     var urlPhoto: String
     var price: Int
     var dateOfAdding: String
+    var addedByUser: String
     var ref: DatabaseReference?
     
-    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", urlPhoto: String = "", price: Int = 0, dateOfAdding: String = "") {
+    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", urlPhoto: String = "", price: Int = 0, dateOfAdding: String = "", addedByUser: String = "") {
         self.ref = nil
         self.id = id
         self.manufacturer = manufacturer
@@ -29,6 +30,7 @@ struct Car {
         self.urlPhoto = urlPhoto
         self.price = price
         self.dateOfAdding = dateOfAdding
+        self.addedByUser = addedByUser
     }
         
     init?(snapshot: DataSnapshot) {
@@ -40,7 +42,8 @@ struct Car {
         let bodyType = value["bodyType"] as? String,
         let price = value["price"] as? Int,
         let urlPhoto = value["urlPhoto"] as? String,
-        let dateOfAdding = value["dateOfAdding"] as? String
+        let dateOfAdding = value["dateOfAdding"] as? String,
+        let addedByUser = value["addedByUser"] as? String
         else { return nil }
         
         self.ref = snapshot.ref
@@ -52,6 +55,7 @@ struct Car {
         self.urlPhoto = urlPhoto
         self.price = price
         self.dateOfAdding = dateOfAdding
+        self.addedByUser = addedByUser
     }
     
     func createProductionYearArray() -> [Int] {
