@@ -22,7 +22,9 @@ class ListTableViewController: UITableViewController {
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
-
+    var isFiltering: Bool {
+          return searchController.isActive && !isSearchBarEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +39,10 @@ class ListTableViewController: UITableViewController {
                 guard let snapshot = child as? DataSnapshot, let car = Car(snapshot: snapshot) else { return }
                     newCar.append(car)
             }
-        
             self.cars = newCar
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         })
     }
     
@@ -54,10 +57,6 @@ class ListTableViewController: UITableViewController {
         else {
         searchController.hidesNavigationBarDuringPresentation = false
         }
-    }
-    
-    var isFiltering: Bool {
-       return searchController.isActive && !isSearchBarEmpty
     }
 
     // MARK: - Table view data source
@@ -91,6 +90,7 @@ class ListTableViewController: UITableViewController {
             storageRef.child(car.id).delete { error in
                 if let error = error {
                     print(error.localizedDescription)
+                    self.callAlert(withText: "Removal failed")
                 }
             }
             car.ref?.removeValue()
@@ -136,11 +136,11 @@ class ListTableViewController: UITableViewController {
             let carsManufacturerAndModel = cars.manufacturer + cars.model
             return carsManufacturerAndModel.lowercased().contains(searchText.lowercased())
       }
-      tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
-    
-    
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()

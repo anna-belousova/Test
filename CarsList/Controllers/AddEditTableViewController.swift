@@ -23,7 +23,6 @@ class AddEditTableViewController: UITableViewController {
     @IBOutlet var uploadPhoto: UIButton!
     @IBOutlet var saveButton: UIBarButtonItem!
     
-    var user: User!
     var cars = Car()
     var bodyTypesArray: Array<String> = []
     var productionYearArray: Array<Int> = []
@@ -43,7 +42,6 @@ class AddEditTableViewController: UITableViewController {
         bodyTypeTextField.delegate = self
         productionYearTextField.delegate = self
         priceTextField.delegate = self
-        
         photo.layer.cornerRadius = 15
     }
     
@@ -58,7 +56,6 @@ class AddEditTableViewController: UITableViewController {
         }
         return UITableView.automaticDimension
     }
-    
     
     func uploadUI() {
         manufacturerTextField.text = cars.manufacturer
@@ -75,15 +72,6 @@ class AddEditTableViewController: UITableViewController {
         cars.bodyType = bodyTypeTextField.text ?? ""
         cars.productionYear = Int(productionYearTextField.text ?? "0") ?? 0
         cars.price = Int(priceTextField.text ?? "0") ?? 0
-        cars.dateOfAdding = getDate(for: Date())
-    }
-    
-    func getDate(for date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let stringDate = dateFormatter.string(from: date)
-        print(stringDate)
-        return stringDate
     }
     
     func textFieldsChanged() {
@@ -96,7 +84,6 @@ class AddEditTableViewController: UITableViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         self.view.addGestureRecognizer(tap)
     }
-
 }
 
 extension AddEditTableViewController: UITextFieldDelegate {
@@ -104,18 +91,9 @@ extension AddEditTableViewController: UITextFieldDelegate {
         if !manufacturerTextField.text!.isEmpty && !modelTextField.text!.isEmpty && !bodyTypeTextField.text!.isEmpty && !productionYearTextField.text!.isEmpty && !priceTextField.text!.isEmpty && productionYearTextField.text != "0" && priceTextField.text != "0" {
             saveButton.isEnabled = true
         }
-        
     }
 }
 
-//    func createUser() {
-//        guard let currentUser = Auth.auth().currentUser else { return }
-//        user.uid = currentUser.uid
-//        user.email = currentUser.email ?? ""
-//        ref = Database.database().reference(withPath: "users").child(user.uid).child("car")
- //   }
-    
-    
 
 
 

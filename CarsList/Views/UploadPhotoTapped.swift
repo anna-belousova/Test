@@ -13,7 +13,7 @@ extension AddEditTableViewController {
         
     @IBAction func uploadPhotoTapped(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Please choose image source", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Choose image source", message: nil, preferredStyle: .actionSheet)
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true

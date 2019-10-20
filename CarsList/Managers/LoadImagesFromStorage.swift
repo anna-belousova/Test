@@ -15,10 +15,8 @@ extension UIImageView {
     func loadImagesUsingCache(urlString: String) {
         if let cachedImage = imageCache.object(forKey: urlString as NSString) {
             self.image = cachedImage
-            print("image from cache")
             return
         }
-        
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {

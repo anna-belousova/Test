@@ -16,10 +16,9 @@ struct Car {
     var bodyType: String
     var urlPhoto: String
     var price: Int
-    var dateOfAdding: String
     var ref: DatabaseReference?
     
-    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", urlPhoto: String = "", price: Int = 0, dateOfAdding: String = "") {
+    init(id: String = "", manufacturer: String = "", model: String = "", productionYear: Int = 0, bodyType: String = "", urlPhoto: String = "", price: Int = 0) {
         self.ref = nil
         self.id = id
         self.manufacturer = manufacturer
@@ -28,7 +27,6 @@ struct Car {
         self.bodyType = bodyType
         self.urlPhoto = urlPhoto
         self.price = price
-        self.dateOfAdding = dateOfAdding
     }
         
     init?(snapshot: DataSnapshot) {
@@ -39,8 +37,7 @@ struct Car {
         let productionYear = value["productionYear"] as? Int,
         let bodyType = value["bodyType"] as? String,
         let price = value["price"] as? Int,
-        let urlPhoto = value["urlPhoto"] as? String,
-        let dateOfAdding = value["dateOfAdding"] as? String
+        let urlPhoto = value["urlPhoto"] as? String
         else { return nil }
         
         self.ref = snapshot.ref
@@ -51,7 +48,6 @@ struct Car {
         self.bodyType = bodyType
         self.urlPhoto = urlPhoto
         self.price = price
-        self.dateOfAdding = dateOfAdding
     }
     
     func createProductionYearArray() -> [Int] {
@@ -73,14 +69,3 @@ struct Car {
     }
 }
 
-extension Car {
-    static var all: [Car] {
-        return [
-            Car(id: "mgCIF6RNXBkfVuXt", manufacturer: "Toyota", model: "Camry", productionYear: 2010, bodyType: "Sedan", urlPhoto: "https://firebasestorage.googleapis.com/v0/b/carslist-663ea.appspot.com/o/images%2FmgCIF6RNXBkfVuXt.jpg?alt=media&token=5221a029-0bdf-4802-989f-94893feb7039" , price: 1000000),
-            Car(id: "T71uz830PwiumSPT", manufacturer: "BMW", model: "X6", productionYear: 2008, bodyType: "Crossover", urlPhoto: "https://firebasestorage.googleapis.com/v0/b/carslist-663ea.appspot.com/o/images%2FT71uz830PwiumSPT.jpg?alt=media&token=840683d2-04b2-4d63-bb22-dcd1bcbc1462", price: 5000000)
-        ]
-    }
-    static func loadDefaults() -> [Car] {
-           return all
-       }
-}

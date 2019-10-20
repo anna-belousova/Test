@@ -17,7 +17,6 @@ class AuthenticationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
-        
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if user != nil {
                 self?.performSegue(withIdentifier: "SignInSegue", sender: nil)
@@ -50,41 +49,37 @@ class AuthenticationViewController: UIViewController {
     
     @IBAction func signInTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
-            callAlert(withText: "Enter the login/password")
+            callAlert(withText: "Enter the email/password")
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] dataResult, error in
             if error != nil {
-                self?.callAlert(withText: "Error occured")
-                print(error!.localizedDescription)
+                self?.callAlert(withText: "Such email and password not found")
+                print(error?.localizedDescription ?? "Error: no discription")
                 return
             }
             if dataResult != nil {
-                self?.performSegue(withIdentifier: "SignInSegue", sender: nil)
-                return
+                    self?.performSegue(withIdentifier: "SignInSegue", sender: nil)
+                    return
             }
-            self?.callAlert(withText: "No such login/password")
         }
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
-            callAlert(withText: "Enter the login and password")
+            callAlert(withText: "Enter the email and password")
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] dataResult, error in
             if error != nil {
-                self?.callAlert(withText: "Error occured")
-                print(error!.localizedDescription)
+                self?.callAlert(withText: "Error occured, try again")
+                print(error?.localizedDescription ?? "Error: no discription")
                 return
             }
             if dataResult == nil {
-                self?.callAlert(withText: "No such login/password")
+                self?.callAlert(withText: "Select other email and password")
             }
         }
     }
-    
-    
-
 }
 
