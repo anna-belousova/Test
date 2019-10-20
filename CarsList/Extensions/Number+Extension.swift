@@ -8,6 +8,10 @@
 
 import Foundation
 
+extension String {
+    
+    
+
     func separatedNumber(_ number: Int) -> String {
         let itIsANumber = number as NSNumber
         let formatter = NumberFormatter()
@@ -16,4 +20,5 @@ import Foundation
         formatter.decimalSeparator = ","
         return formatter.string(from: itIsANumber)!
     }
+}
 

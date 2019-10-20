@@ -17,10 +17,17 @@ class ListTableViewController: UITableViewController {
     var carCell = CarCell()
     let ref = Database.database().reference(withPath: "cars")
     let storageRef = Storage.storage().reference().child("images")
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredCars: [Car] = []
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getSnapshot()
+        createSearchController()
     }
     
     func getSnapshot() {
@@ -30,20 +37,46 @@ class ListTableViewController: UITableViewController {
                 guard let snapshot = child as? DataSnapshot, let car = Car(snapshot: snapshot) else { return }
                     newCar.append(car)
             }
+        
             self.cars = newCar
             self.tableView.reloadData()
         })
     }
+    
+    func createSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search car"
+        navigationItem.searchController = searchController
+        searchController.definesPresentationContext = true
+        if #available(iOS 13.0, *) {
+        }
+        else {
+        searchController.hidesNavigationBarDuringPresentation = false
+        }
+    }
+    
+    var isFiltering: Bool {
+       return searchController.isActive && !isSearchBarEmpty
+    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+          return filteredCars.count
+        }
         return cars.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as! CarCell
-        let car = cars[indexPath.row]
+        let car: Car
+        if isFiltering {
+          car = filteredCars[indexPath.row]
+        } else {
+            car = cars[indexPath.row]
+        }
         cell.descriptionLabel.text = "\(car.manufacturer) \(car.model), \(car.productionYear)"
         cell.priceLabel.text = "\(car.price) $"
         cell.photoImageView.loadImagesUsingCache(urlString: car.urlPhoto)
@@ -78,7 +111,12 @@ class ListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "EditSegue" else { return }
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        let car = cars[selectedPath.row]
+        let car: Car
+        if isFiltering {
+            car = filteredCars[selectedPath.row]
+        } else {
+            car = cars[selectedPath.row]
+        }
         let destination = segue.destination as! AddEditTableViewController
         destination.cars = car
     }
@@ -91,7 +129,16 @@ class ListTableViewController: UITableViewController {
         performSegue(withIdentifier: "PresentSegue", sender: nil)
         present(alert, animated: true)
         selectedImage = nil
-          }
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredCars = cars.filter { (cars: Car) -> Bool in
+            let carsManufacturerAndModel = cars.manufacturer + cars.model
+            return carsManufacturerAndModel.lowercased().contains(searchText.lowercased())
+      }
+      tableView.reloadData()
+    }
+
     
     
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
@@ -102,8 +149,16 @@ class ListTableViewController: UITableViewController {
             print(error.localizedDescription)
         }
         self.dismiss(animated: true, completion: nil)
-        //navigationController?.popViewController(animated: true)
-        print("sign out")
     }
 }
+
+extension ListTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+
+
 

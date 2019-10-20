@@ -75,6 +75,15 @@ class AddEditTableViewController: UITableViewController {
         cars.bodyType = bodyTypeTextField.text ?? ""
         cars.productionYear = Int(productionYearTextField.text ?? "0") ?? 0
         cars.price = Int(priceTextField.text ?? "0") ?? 0
+        cars.dateOfAdding = getDate(for: Date())
+    }
+    
+    func getDate(for date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let stringDate = dateFormatter.string(from: date)
+        print(stringDate)
+        return stringDate
     }
     
     func textFieldsChanged() {

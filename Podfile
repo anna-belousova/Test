@@ -10,6 +10,5 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
-pod 'Kingfisher'
 
 end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38B351E44A74E12F20A96750 /* Pods_CarsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6E2A9E98D768DE00EB715 /* Pods_CarsList.framework */; };
+		11698239644A13B05A59BD22 /* Pods_CarsList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A4D9581D680ABCCC5B5CA4 /* Pods_CarsList.framework */; };
 		D014E4C123451F02004DFCC2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014E4C023451F02004DFCC2 /* Car.swift */; };
 		D014E4C3234529FF004DFCC2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014E4C2234529FF004DFCC2 /* ListTableViewController.swift */; };
 		D014E4C723452E3B004DFCC2 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014E4C623452E3B004DFCC2 /* CarCell.swift */; };
@@ -30,9 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DE64714FF1098E3307DB6D4 /* Pods-CarsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsList.debug.xcconfig"; path = "Target Support Files/Pods-CarsList/Pods-CarsList.debug.xcconfig"; sourceTree = "<group>"; };
-		91B7356A925B715571DF8B61 /* Pods-CarsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsList.release.xcconfig"; path = "Target Support Files/Pods-CarsList/Pods-CarsList.release.xcconfig"; sourceTree = "<group>"; };
-		CFA6E2A9E98D768DE00EB715 /* Pods_CarsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10A4D9581D680ABCCC5B5CA4 /* Pods_CarsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D3E01BE690EF509263334FD /* Pods-CarsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsList.release.xcconfig"; path = "Target Support Files/Pods-CarsList/Pods-CarsList.release.xcconfig"; sourceTree = "<group>"; };
 		D014E4C023451F02004DFCC2 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		D014E4C2234529FF004DFCC2 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		D014E4C623452E3B004DFCC2 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		D0D35E04235B8AAF00CE2CB9 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		D0E7039E2348E47000B932DA /* SaveChangesSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesSegue.swift; sourceTree = "<group>"; };
 		D0E703C223491C3600B932DA /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		FB8EE34EB933017ACE680023 /* Pods-CarsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsList.debug.xcconfig"; path = "Target Support Files/Pods-CarsList/Pods-CarsList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B351E44A74E12F20A96750 /* Pods_CarsList.framework in Frameworks */,
+				11698239644A13B05A59BD22 /* Pods_CarsList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,16 +71,16 @@
 		0E7363DB19F97559F7195144 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2DE64714FF1098E3307DB6D4 /* Pods-CarsList.debug.xcconfig */,
-				91B7356A925B715571DF8B61 /* Pods-CarsList.release.xcconfig */,
+				FB8EE34EB933017ACE680023 /* Pods-CarsList.debug.xcconfig */,
+				4D3E01BE690EF509263334FD /* Pods-CarsList.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		ADD6D00EB17844ED3614975C /* Frameworks */ = {
+		522A4F1D37C42EBE2863F071 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFA6E2A9E98D768DE00EB715 /* Pods_CarsList.framework */,
+				10A4D9581D680ABCCC5B5CA4 /* Pods_CarsList.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 				D0901D2223451A270010174F /* CarsList */,
 				D0901D2123451A270010174F /* Products */,
 				0E7363DB19F97559F7195144 /* Pods */,
-				ADD6D00EB17844ED3614975C /* Frameworks */,
+				522A4F1D37C42EBE2863F071 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,11 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0901D3423451A290010174F /* Build configuration list for PBXNativeTarget "CarsList" */;
 			buildPhases = (
-				C083EAB29E14E42CC820752A /* [CP] Check Pods Manifest.lock */,
+				BDDE0913B57183522FB35AAC /* [CP] Check Pods Manifest.lock */,
 				D0901D1C23451A270010174F /* Sources */,
 				D0901D1D23451A270010174F /* Frameworks */,
 				D0901D1E23451A270010174F /* Resources */,
-				8395B0D53F1C2B75ABCD4BE3 /* [CP] Embed Pods Frameworks */,
+				AE3456182A1BDED5DDA0EE03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +236,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8395B0D53F1C2B75ABCD4BE3 /* [CP] Embed Pods Frameworks */ = {
+		AE3456182A1BDED5DDA0EE03 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,7 +253,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarsList/Pods-CarsList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C083EAB29E14E42CC820752A /* [CP] Check Pods Manifest.lock */ = {
+		BDDE0913B57183522FB35AAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -437,7 +437,7 @@
 		};
 		D0901D3523451A290010174F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE64714FF1098E3307DB6D4 /* Pods-CarsList.debug.xcconfig */;
+			baseConfigurationReference = FB8EE34EB933017ACE680023 /* Pods-CarsList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,7 +457,7 @@
 		};
 		D0901D3623451A290010174F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91B7356A925B715571DF8B61 /* Pods-CarsList.release.xcconfig */;
+			baseConfigurationReference = 4D3E01BE690EF509263334FD /* Pods-CarsList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

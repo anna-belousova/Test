@@ -44,12 +44,12 @@ extension ListTableViewController {
                                 return
                             }
                             let urlPhoto = downloadUrl.absoluteString
-                            car.ref?.updateChildValues(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
+                            car.ref?.updateChildValues(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
                             selectedImage = nil
                         }
                     }
                 } else {
-                    car.ref?.updateChildValues(["id": car.id, "urlPhoto": car.urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
+                    car.ref?.updateChildValues(["id": car.id, "urlPhoto": car.urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
                 }
             } else {
     //added cell
@@ -70,7 +70,7 @@ extension ListTableViewController {
                         }
                         let urlPhoto = downloadUrl.absoluteString
                         print(urlPhoto)
-                        newRef.setValue(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price])
+                        newRef.setValue(["id": car.id, "urlPhoto": urlPhoto, "manufacturer": car.manufacturer, "model": car.model, "productionYear": car.productionYear, "bodyType": car.bodyType, "price": car.price, "dateOfAdding": car.dateOfAdding])
                         selectedImage = nil
                     }
                 }
